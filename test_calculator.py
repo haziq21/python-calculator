@@ -25,6 +25,7 @@ def test_multiply():
     assert multiply(0, 5) == 0
 
 
+@pytest.mark.slow
 def test_divide():
     """Test division function."""
     assert divide(8, 2) == 4
@@ -32,6 +33,8 @@ def test_divide():
     assert divide(-10, 2) == -5
 
 
+@pytest.mark.slow
+@pytest.mark.edge
 def test_divide_by_zero():
     """Test that dividing by zero raises an error."""
     with pytest.raises(ValueError):
